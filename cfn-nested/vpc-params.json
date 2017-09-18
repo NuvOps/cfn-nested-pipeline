@@ -1,0 +1,34 @@
+[
+  {
+  "ParameterKey": "VPCCIDR",
+  "ParameterValue": "10.10.10.0/24"
+  },
+  {
+  "ParameterKey": "PublicSubnet1",
+  "ParameterValue": "10.10.10.0/26"
+  },
+  {
+  "ParameterKey": "PublicSubnet2",
+  "ParameterValue": "10.10.10.64/26"
+  },
+  {
+  "ParameterKey": "PrivateSubnet1",
+  "ParameterValue": "10.10.10.128/26"
+  },
+  {
+  "ParameterKey": "PrivateSubnet2",
+  "ParameterValue": "10.10.10.192/26"
+  },
+  {
+  "ParameterKey": "UATApprovalEmail",
+  "ParameterValue": "hi@nuvops.com"
+  },
+  {
+  "ParameterKey": "ProdApprovalEmail",
+  "ParameterValue": "hi@nuvops.com"
+  },
+  {
+  "ParameterKey": "TagPrefix",
+  "ParameterValue": "NestedCFN-VPC"
+  }
+]

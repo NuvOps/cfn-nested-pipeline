@@ -1,0 +1,21 @@
+{
+  "Parameters" : {
+    "TemplatePath": "TEMPLATE_PATH_PLACEHOLDER",
+    "VPCID": "vpc-4bc7d332",
+    "PrivateSubnet1": "subnet-2a5d7270",
+    "PrivateSubnet2": "subnet-8c9633e8",
+    "PublicSubnet1": "subnet-9f4a65c5",
+    "PublicSubnet2": "subnet-278b2e43",
+    "S3BucketName": "nested-pipe-vpc-s3bucket-1etv579qg5zys",
+    "KeyPair": "myAws",
+    "AMIId": "ami-4fffc834",
+    "WebInstanceType": "t2.micro",
+    "WebMinSize": "1",
+    "WebMaxSize": "1",
+    "DBSubnetGroup": "nested-pipe-vpc-rdssubnetgroup-wrw068srwptx",
+    "DBUsername": "dbadmin",
+    "DBPassword": "dbpAssw0rd",
+    "DBInstanceType": "db.t2.small",
+    "Environment": "uat"
+  }
+}
