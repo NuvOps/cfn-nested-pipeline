@@ -18,10 +18,10 @@ Let's start by creating the repositories and enabling Continuous Delivery pipeli
 ### Create base VPC Stack
 In the [cfn-nested](cfn-nested/) directory there are multiple YAML (*CloudFormation Templates*) & JSON (*CloudFormation Configuration*) files.
 
-**[vpc-stack.yml](cfn-nested-repo/vpc-stack.yml):** is the CloudFormation template to create the base VPC, Subnets, NAT Gateways, etc which will be used.
-**[vpc-params.json](cfn-nested-repo/vpc-params.json):** is the parameters file which contains the parameter values for the CFN template. Update the *ProdApprovalEmail & UATApprovalEmail* values to provide the appropriate email address.
+**[vpc-stack.yml](cfn-nested/vpc-stack.yml):** is the CloudFormation template to create the base VPC, Subnets, NAT Gateways, etc which will be used.
+**[vpc-params.json](cfn-nested/vpc-params.json):** is the parameters file which contains the parameter values for the CFN template. Update the *ProdApprovalEmail & UATApprovalEmail* values to provide the appropriate email address.
 
-Go to `cfn-nested-repo` directory and execute the following AWS CLI command to create CloudFormation stack.
+Go to `cfn-nested` directory and execute the following AWS CLI command to create CloudFormation stack.
 
 ```bash
 cd cfn-nested
@@ -33,9 +33,9 @@ aws cloudformation create-stack --stack-name NestedCFN-VPC --template-body file:
 ### Update CloudFormation parameters configuration files
 In the [cfn-nested](cfn-nested/) directory there are following 3 JSON (*CloudFormation Configuration*) files.
 
-**[config-test.json](cfn-nested-repo/config-test.json):** - CloudFormation parameter configuration file for test stack
-**[config-uat.json](cfn-nested-repo/config-uat.json):** - CloudFormation parameter configuration file for UAT stack
-**[config-prod.json](cfn-nested-repo/config-prod.json):** - CloudFormation parameter configuration file for Prod stack
+**[config-test.json](cfn-nested/config-test.json):** - CloudFormation parameter configuration file for test stack
+**[config-uat.json](cfn-nested/config-uat.json):** - CloudFormation parameter configuration file for UAT stack
+**[config-prod.json](cfn-nested/config-prod.json):** - CloudFormation parameter configuration file for Prod stack
 
 Update these 3 configuration files with appropriate values for *VPCID, PrivateSubnet1, PrivateSubnet2, PublicSubnet1, PublicSubnet2, S3BucketName & DBSubnetGroup* based on the values in the output section of the base VPC stack created in Step 1. Update *KeyPair* value with an existing key pair or create a new key pair and use it.
 
@@ -65,7 +65,5 @@ aws cloudformation create-stack --stack-name NestedCFN-CodePipeline --template-b
 ```
 
 Once the CloudFormation successfully creates the stack, it would have created a CodePipeline with similar stages as shown below.
-
-![CodePipeline Stages](images/Pipeline_Flow.png)
 
 _Note: While removing the resources, delete the Prod & UAT stacks created by pipeline before deleting the pipeline since those CloudFormations stacks uses the role created by pipeline stack._
